@@ -1,0 +1,259 @@
+/* Basic reset & layout */
+:root {
+  --max-width: 980px;
+  --accent: #2563eb;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial;
+  background: #f8fafc;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 18px;
+}
+
+/* Header */
+.header {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand a {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--accent);
+  text-decoration: none;
+}
+.nav a {
+  margin-right: 14px;
+  color: #374151;
+  text-decoration: none;
+}
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.cart-indicator {
+  position: relative;
+}
+.cart-indicator a {
+  text-decoration: none;
+  color: #111827;
+}
+.badge {
+  background: var(--accent);
+  color: white;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 13px;
+  margin-left: 8px;
+}
+
+/* Main content */
+.main-content {
+  padding: 20px 0;
+}
+
+/* Course card */
+.course-card {
+  display: flex;
+  gap: 16px;
+  background: white;
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.course-img {
+  width: 160px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.course-body h3 {
+  margin: 0 0 6px;
+}
+.course-desc {
+  margin: 6px 0;
+  color: var(--muted);
+}
+.muted {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Controls */
+.controls {
+  margin-top: 10px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.counter button {
+  width: 34px;
+  height: 30px;
+  border: 1px solid var(--border);
+  background: white;
+  cursor: pointer;
+}
+.count {
+  min-width: 24px;
+  text-align: center;
+}
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Course list / special form */
+.special-create {
+  margin-bottom: 12px;
+  padding: 12px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.special-form {
+  display: flex;
+  gap: 8px;
+}
+.special-form input {
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  flex: 1;
+}
+.special-form button {
+  padding: 8px 12px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Price list */
+.price-list {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 8px;
+}
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed #efefef;
+}
+.price-item .title {
+  font-weight: 600;
+}
+.price-item .meta {
+  color: var(--muted);
+  font-size: 13px;
+}
+.item-sum {
+  font-weight: 700;
+  margin-top: 6px;
+}
+.small {
+  margin-top: 6px;
+  background: transparent;
+  border: none;
+  color: #dc2626;
+  cursor: pointer;
+}
+
+/* Cart preview (fixed on right) */
+.cart-preview {
+  position: fixed;
+  right: 20px;
+  top: 92px;
+  width: 300px;
+  background: white;
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  z-index: 60;
+}
+.cart-preview h4 {
+  margin: 0 0 8px 0;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.cart-item .title {
+  font-weight: 600;
+}
+.tiny {
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+/* page layout */
+.page h1,
+.page h2 {
+  margin-top: 0;
+}
+.buttons {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+}
+.btn {
+  padding: 10px 14px;
+  background: var(--accent);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn.outline {
+  background: white;
+  border: 1px solid var(--border);
+  color: #111827;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .container {
+    padding: 12px;
+  }
+  .cart-preview {
+    position: static;
+    width: auto;
+    margin-top: 12px;
+  }
+  .course-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
