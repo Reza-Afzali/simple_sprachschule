@@ -18,7 +18,7 @@ const CourseCard: React.FC<Props> = ({
     <div className="course-card">
       <img
         className="course-img"
-        // src={course.img ?? "https://via.placeholder.com/160x100"}
+        src={course.img ?? "https://via.placeholder.com/160x100"}
         alt={course.title}
       />
       <div className="course-body">
@@ -38,7 +38,7 @@ const CourseCard: React.FC<Props> = ({
               onClick={() =>
                 onChangeSelection(
                   Math.max(0, currentPersons - 1),
-                  currentWithAccommodation
+                  currentWithAccommodation,
                 )
               }
             >
